@@ -124,6 +124,11 @@ li:hover {
     margin: 0;
 }
 
+.top-box span {
+  font-size: 12px;
+  padding-right: 10px;
+}
+
 .success {
   background: rgba(150, 245, 188, 0.2);
 }

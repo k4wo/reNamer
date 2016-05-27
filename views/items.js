@@ -34,17 +34,26 @@ function prepareViews(files, dispatch) {
 	return res;
 }
 
-function makeSelector(all, unselected, dispatch) {
+function makeHeader(all, unselected, dispatch) {
+	let button;
 
 	if( all === 0 ) {
 		return null;
 	}
 	else if( all === unselected ) {
-		return <button className="btn select" onClick={() => dispatch({type: 'SELECT'})}>Select All</button>;
+		button = <button className="btn select" onClick={() => dispatch({type: 'SELECT'})}>Select All</button>
 	}
 	else {
-		return <button className="btn select" onClick={() => dispatch({type: 'DESELECT'})}>Deselect All</button>;
+		button = <button className="btn select" onClick={() => dispatch({type: 'DESELECT'})}>Deselect All</button>
+
 	}
+
+	return (
+			<header className="top-box">
+				<span>Selected {all - unselected} from {all}</span>
+				{button}
+			</header>
+	);
 }
 
 function Right({ data }) {
@@ -52,11 +61,11 @@ function Right({ data }) {
 			, len      = files ? files.length : 0
 			, dispatch = data.dispatch
 			, { items, unselected } = prepareViews(files, dispatch)
-			, selector = makeSelector(len, unselected, dispatch);
+			, header   = makeHeader(len, unselected, dispatch);
 
 	return (
 			<div id="right-panel">
-				<header className="top-box">{selector}</header>
+				{header}
 				<main>
 					<ul>
 						{items}

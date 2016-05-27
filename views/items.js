@@ -4,9 +4,10 @@ import React from 'react';
 
 function item(file, dispatch) {
 	const old = file.old ? <span className="old-name">{file.old}</span> : null;
+	const css = file.old ? 'success' : '';
 
 	return (
-			<li key={file.id} onClick={() => dispatch({id: file.id, type: 'TOGGLE_FILE'})}>
+			<li className={css} key={file.id} onClick={() => dispatch({id: file.id, type: 'TOGGLE_FILE'})}>
 				<div className="squaredOne">
 					<input type="checkbox" name="check" checked={file.select}/>
 				</div>

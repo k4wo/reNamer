@@ -76,10 +76,11 @@ ul {
   list-style: none;
   width: 100%;
   padding: 10px 0;
+  margin-top: 45px;
 }
 
 li {
-  margin: 5px 0;
+  margin: 2px 0;
   padding: 0 10px;
   cursor: pointer;
   display: flex;
@@ -111,10 +112,18 @@ li:hover {
   position: relative;
 }
 
+#right-panel main {
+  width: 100%;
+}
+
 .top-box {
     background: #E2EEF6;
     padding: 10px;
     width: 100%;
     position: fixed;
     margin: 0;
+}
+
+.success {
+  background: rgba(150, 245, 188, 0.2);
 }

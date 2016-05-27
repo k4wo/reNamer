@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {connect} from 'react-redux'
-import openDir from '../lib/open_directory';
+import open from '../lib/open-dialog';
 import readDir from '../lib/get_all_files';
 import isFile from '../lib/isFile';
 
@@ -16,7 +16,7 @@ class Left extends React.Component {
 	}
 
 	openFolder() {
-		const directory = openDir()[0];
+		const directory = open()[0];
 
 		readDir(directory)
 				.then(res => res.map(file => isFile(file, directory)))
@@ -28,6 +28,23 @@ class Left extends React.Component {
 				.catch(err => console.log(err));
 	}
 
+	openFiles() {
+		let files = open(true);
+
+		if( !files.length ) {
+			console.log('NO Files~!');
+			return;
+		}
+
+		const splice    = files[0].split('/');
+		const directory = splice.slice(1, splice.length - 1).join('/');
+
+		files = files.map(file => file.split('/').slice(-1)[0]);
+
+		this.props.dispatch({ type: 'ADD_FILE', file: files });
+		this.props.dispatch({ type: 'LOCATION', location: directory });
+	}
+
 	render() {
 
 		return (
@@ -35,7 +52,7 @@ class Left extends React.Component {
 					<div className="options-box">
 						<main>
 							<button className="btn" onClick={() => this.openFolder()}>Folder</button>
-							<button className="btn">Files</button>
+							<button className="btn" onClick={() => this.openFiles()}>Files</button>
 							<div className="find_replace">
 								<label>
 									<p className="label">Find:</p>

@@ -1,0 +1,120 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Calibri', 'Helvetica Neue',  'Lucida Grande', 'Verdana';
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  width: 100%;
+}
+
+input[type=text] {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #B6CDDC;
+  outline: none;
+  color: #252525;
+  font-size: 14px;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    outline: none;
+    background: #B6CDDC;
+    transition: 1s;
+    margin: 0 2px;
+}
+
+.btn:hover {
+    background: #CFE4F1;
+    color: #304E61;
+}
+
+#main {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#right-panel, #left-panel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#left-panel {
+  color: rgb(68, 68, 68);
+  flex: 0 0 190px;
+  font-size: 14px;
+}
+
+#left-panel p {
+  margin-bottom: 2px;
+}
+
+.options-box {
+    position: fixed;
+    background: #E2EEF6;
+    padding: 10px;
+    height: 100%;
+}
+
+.find_replace > div {
+  margin: 10px auto;
+}
+
+ul {
+  list-style: none;
+  width: 100%;
+  padding: 10px 0;
+}
+
+li {
+  margin: 5px 0;
+  padding: 0 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+}
+
+li:hover {
+  background-color: #F5F9FC;
+}
+
+.names {
+  flex-direction: column;
+  display: flex;
+  margin: 0 8px;
+}
+
+.old-name {
+    font-size: 10px;
+    color: #6D6868;
+    margin-left: 5px;
+}
+
+#right-panel {
+  flex-grow: 2;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.top-box {
+    background: #E2EEF6;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    margin: 0;
+}

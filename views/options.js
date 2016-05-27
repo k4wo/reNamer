@@ -52,28 +52,26 @@ class Left extends React.Component {
 
 		return (
 				<nav id="left-panel">
-					<div className="options-box">
-						<main>
-							<button className="btn" onClick={() => this.openFolder()}>Folder</button>
-							<button className="btn" onClick={() => this.openFiles()}>Files</button>
-							<div className="find_replace">
-								<label>
-									<p className="label">Find:</p>
-									<input type="text" name="find" onChange={e => this.setState({find: e.target.value})}/>
-								</label>
-								<label>
-									<p className="label">Replace:</p>
-									<input type="text" name="replace" onChange={e => this.setState({replace: e.target.value})}/>
-								</label>
-								<div className="options">
-									<label><input type="checkbox" onClick={() => this.props.case()}/>Ignore case sensivity</label>
-								</div>
-								<div>
-									<button className="btn" onClick={() => this.props.replace(this.state)}>Find & Replace</button>
-								</div>
+					<main className="options-box">
+						<button className="btn" onClick={() => this.openFolder()}>Folder</button>
+						<button className="btn" onClick={() => this.openFiles()}>Files</button>
+						<div className="find_replace">
+							<label>
+								<p className="label">Find:</p>
+								<input type="text" name="find" onChange={e => this.setState({find: e.target.value})}/>
+							</label>
+							<label>
+								<p className="label">Replace:</p>
+								<input type="text" name="replace" onChange={e => this.setState({replace: e.target.value})}/>
+							</label>
+							<div className="options">
+								<label><input type="checkbox" onClick={() => this.props.case()}/>Ignore case sensivity</label>
 							</div>
-						</main>
-					</div>
+							<div>
+								<button className="btn" onClick={() => this.props.replace(this.state)}>Find & Replace</button>
+							</div>
+						</div>
+					</main>
 				</nav>
 		)
 	}

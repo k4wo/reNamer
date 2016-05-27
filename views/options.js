@@ -16,23 +16,26 @@ class Left extends React.Component {
 	}
 
 	openFolder() {
-		const directory = open()[0];
+		const directory = open();
 
-		readDir(directory)
-				.then(res => res.map(file => isFile(file, directory)))
+		if( !directory || !directory.length ) {
+			return;
+		}
+
+		readDir(directory[0])
+				.then(res => res.map(file => isFile(file, directory[0])))
 				.then(res => Promise.all(res))
 				.then(res => res.filter(file => file.isFile))
 				.then(res => res.map(file => file.name))
 				.then(res => this.props.dispatch({ type: 'ADD_FILE', file: res }))
-				.then(() => this.props.dispatch({ type: 'LOCATION', location: directory }))
+				.then(() => this.props.dispatch({ type: 'LOCATION', location: directory[0] }))
 				.catch(err => console.log(err));
 	}
 
 	openFiles() {
 		let files = open(true);
 
-		if( !files.length ) {
-			console.log('NO Files~!');
+		if( !files || !files.length ) {
 			return;
 		}
 

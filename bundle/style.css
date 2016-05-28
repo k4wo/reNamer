@@ -23,7 +23,7 @@ input[type=text] {
 }
 
 .btn {
-    padding: 10px;
+    padding: 5px 10px;
     border-radius: 5px;
     border: none;
     font-size: 12px;
@@ -63,9 +63,9 @@ input[type=text] {
 
 .options-box {
     position: fixed;
-    background: #E2EEF6;
     padding: 10px;
     height: 100%;
+    background-image: -webkit-linear-gradient(bottom right, #E0F7FF 0%, #F3F7F9 100%);
 }
 
 .find_replace > div {
@@ -87,6 +87,7 @@ li {
   flex-direction: row;
   align-items: center;
   height: 50px;
+  background: #F3F7F9;
 }
 
 li:hover {
@@ -117,11 +118,10 @@ li:hover {
 }
 
 .top-box {
-    background: #E2EEF6;
     padding: 10px;
     width: 100%;
     position: fixed;
-    margin: 0;
+    background-image: -webkit-linear-gradient(bottom right, #E0F7FF 0%, #F3F7F9 100%);
 }
 
 .top-box span {
@@ -131,4 +131,8 @@ li:hover {
 
 .success {
   background: rgba(150, 245, 188, 0.2);
+}
+
+.bold {
+    font-weight: 700;
 }

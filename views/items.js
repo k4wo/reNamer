@@ -41,10 +41,10 @@ function makeHeader(all, unselected, dispatch) {
 		return null;
 	}
 	else if( all === unselected ) {
-		button = <button className="btn select" onClick={() => dispatch({type: 'SELECT'})}>Select All</button>
+		button = <button className="btn bold" onClick={() => dispatch({type: 'SELECT'})}>+</button>
 	}
 	else {
-		button = <button className="btn select" onClick={() => dispatch({type: 'DESELECT'})}>Deselect All</button>
+		button = <button className="btn bold" onClick={() => dispatch({type: 'DESELECT'})}>-</button>
 
 	}
 
